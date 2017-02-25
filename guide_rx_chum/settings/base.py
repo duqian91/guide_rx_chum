@@ -10,7 +10,7 @@ sys.path.insert(0, root('apps'))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'CHANGE THIS!!!'
+SECRET_KEY = '=!@d@&_m@oh_!-n+zqd^#(h$6uq*9^lgv+jeqpl%thx65a_#4l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -21,6 +21,11 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # installed
+    'easy_thumbnails',
+    'filer',
+    'mptt',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,7 +34,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles'
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = [
+    'guide',
+]
 
 INSTALLED_APPS += PROJECT_APPS
 
