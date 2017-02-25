@@ -1,3 +1,13 @@
-# This file is here because many Platforms as a Service look for
-#	requirements.txt in the root directory of a project.
--r requirements/production.txt
+arrow==0.10.0
+binaryornot==0.4.0
+chardet==2.3.0
+click==6.7
+cookiecutter==1.5.1
+future==0.16.0
+Jinja2==2.9.5
+jinja2-time==0.2.0
+MarkupSafe==0.23
+poyo==0.4.0
+python-dateutil==2.6.0
+six==1.10.0
+whichcraft==0.4.0
