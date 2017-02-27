@@ -13,7 +13,7 @@ class GuideAPIFilter(filters.FilterSet):
         fields = ['category',]
 
     # to_field_name is used to specify which field to use
-    category = rest_filters.ModelChoiceFilter(
+    category = django_filters.ModelChoiceFilter(
         queryset=Category.objects.all(),
         to_field_name='category_name',
     )

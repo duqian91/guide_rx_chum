@@ -15,7 +15,7 @@ class GuideSerializer(serializers.ModelSerializer):
         fields = (
             'guide_name',
             'description',
-            'document',
+            'document_url',
             'category',
             'tag',
             'author',
