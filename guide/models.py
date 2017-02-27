@@ -1,4 +1,6 @@
 from django.db import models
+
+from filer.fields.image import FilerImageField
 from filer.fields.file import FilerFileField
 
 
@@ -30,8 +32,10 @@ class Category(models.Model):
         max_length=300,
     )
 
+    category_img = FilerImageField(blank=True, null=True)
+
     def __str__(self):
-        return self.category
+        return self.category_name
 
 
 # Main Guide model
@@ -58,4 +62,4 @@ class Guide(models.Model):
     )
 
     def __str__(self):
-        return self.category
+        return self.guide_name
