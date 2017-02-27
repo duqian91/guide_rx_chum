@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'easy_thumbnails',
     'filer',
     'mptt',
+    'rest_framework',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -71,7 +72,7 @@ DATABASES = {
 
 # Internationalization
 
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
@@ -143,3 +144,11 @@ except ImportError:
 # importing test settings file if necessary
 if IN_TESTING:
     from .testing import *  # noqa
+
+
+# REST Framework
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('rest_framework_filters.backends.DjangoFilterBackend',),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10,
+}
