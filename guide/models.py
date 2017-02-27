@@ -46,11 +46,11 @@ class Guide(models.Model):
         'Description du guide',
     )
 
-    document = FilerFileField(related_name="guide_documents")
+    document = FilerFileField(related_name="guides")
 
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="guides")
 
-    tag = models.ManyToManyField(Tag, blank=True)
+    tag = models.ManyToManyField(Tag, blank=True, related_name="guides")
 
     author = models.TextField(
         'Auteur du guide',
