@@ -21,12 +21,16 @@ class GuideSerializer(serializers.ModelSerializer):
 
     document_url = serializers.SerializerMethodField()
     category_img_url = serializers.SerializerMethodField()
+    tag_color= serializers.SerializerMethodField()
 
     def get_category_img_url(self, obj):
         return obj.category.category_img.url
 
     def get_document_url(self, obj):
         return obj.document.url
+
+    def get_tag_color(self, obj):
+        return obj.tag.color_class
 
     class Meta:
         model = Guide
@@ -38,6 +42,7 @@ class GuideSerializer(serializers.ModelSerializer):
             'category',
             'category_img_url',
             'tag',
+            'tag_color',
             'author',
         )
 
