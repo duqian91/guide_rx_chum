@@ -11,7 +11,22 @@ class Tag(models.Model):
         'Tag',
         max_length=200,
     )
-
+    
+    color_class = models.CharField(
+        'Bootstrap color class',
+        max_length=200,
+        choices=(
+            ('label-default', 'label-default'),
+            ('label-primary', 'label-primary'),
+            ('label-success', 'label-success'),
+            ('label-info', 'label-info'),
+            ('label-warning', 'label-warning'),
+            ('label-danger', 'label-danger'),           
+        ),
+        blank=True,
+        null=True,
+    )
+    
     def __str__(self):
         return self.tag
 
