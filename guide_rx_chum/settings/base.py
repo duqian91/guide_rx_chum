@@ -16,7 +16,7 @@ SECRET_KEY = '=!@d@&_m@oh_!-n+zqd^#(h$6uq*9^lgv+jeqpl%thx65a_#4l'
 DEBUG = True
 IN_TESTING = sys.argv[1:2] == ['test']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
