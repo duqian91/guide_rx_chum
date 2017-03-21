@@ -9,7 +9,7 @@ urlpatterns = [
 
     # Page urls
     url(r'^$',
-        TemplateView.as_view(template_name="pages/index.html"),
+        views.IndexView.as_view(),
         name='index',
         ),
 

@@ -29,9 +29,9 @@
             <!--<span class="btn btn-default btn-xs">Réinitialiser</span>-->
             </h5> 
             <select class="selectpicker form-control" multiple data-style="btn-primary" data-none-selected-text="Catégories">
-              <option>Cardiologie</option>
-              <option>Pharmacocinétique</option>
-              <option>Oncologie</option>
+              {% for category in category_list %}
+              <option>{{ category.category_name }}</option>                
+              {% endfor %}
             </select>
           </div> <!-- /.form-group -->            
         </div> <!-- /.col-md-6 -->
@@ -55,92 +55,25 @@
         15 résultats trouvés au total
     </h2>
     <section id="guides" >
+    {% for guide in guide_list %}
       <article class="media">
         <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          <a target="_blank" href="{{ guide.document.url }}">
+            <img class="media-object" src="{{ guide.category.category_img.url }}" alt="">
           </a>
         </div>
         <div class="media-body">
-          <h4 class="media-heading">Guide NACO</h4>
-          Guide informatif comprenant les doses de NACO, les interactions et leur gestion ainsi que leur indication. 
+          <h4 class="media-heading"><a target="_blank" href="{{ guide.document.url }}">{{ guide.guide_name }}</a></h4>
+          {{ guide.description }}
           <div class="tags">
-            <span class="label label-default">Amiodarone</span>
-            <span class="label label-primary">NACO</span>
-            <span class="label label-success">Interaction</span>
-            <span class="label label-info">Cardio</span>
-            <span class="label label-warning">Apixaban</span>
-            <span class="label label-danger">Anti-Xa</span>              
+            {% for tag in guide.tag.all %}
+            <span class="label {{ tag.color_class }}">{{ tag.tag }}</span>
+            {% endfor %}
           </div>
         </div>
       </article>
-
-      <article class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Dermatology.svg" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Thumbnail label</h4>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-        </div>
-      </article>
-      <article class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Thumbnail label</h4>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-        </div>
-      </article>
-      <article class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Thumbnail label</h4>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-        </div>
-      </article>
-      <article class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Thumbnail label</h4>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-        </div>
-      </article>
-      <article class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Thumbnail label</h4>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-        </div>
-      </article>
-      <article class="media">
-        <div class="media-left media-middle">
-          <a href="#">
-            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-          </a>
-        </div>
-        <div class="media-body">
-          <h4 class="media-heading">Thumbnail label</h4>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-        </div>
-      </article>                        
+      
+    {% endfor %}
     </section> <!-- /#guides -->
 
     <nav aria-label="Page navigation">

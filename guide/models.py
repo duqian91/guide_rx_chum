@@ -47,7 +47,7 @@ class Category(models.Model):
         max_length=300,
     )
 
-    category_img = FilerImageField(blank=True, null=True, related_name='img')
+    category_img = FilerFileField(blank=True, null=True, related_name='img')
 
     def __str__(self):
         return self.category_name
