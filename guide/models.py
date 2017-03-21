@@ -47,7 +47,7 @@ class Category(models.Model):
         max_length=300,
     )
 
-    category_img = FilerImageField(blank=True, null=True)
+    category_img = FilerImageField(blank=True, null=True, related_name='img')
 
     def __str__(self):
         return self.category_name
@@ -65,7 +65,7 @@ class Guide(models.Model):
         'Description du guide',
     )
 
-    document = FilerFileField(related_name="guides")
+    document = FilerFileField(blank=True, null=True, related_name="guides")
 
     category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="guides")
 

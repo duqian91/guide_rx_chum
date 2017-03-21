@@ -1,241 +1,171 @@
-<!doctype html>
+{% extends "base.html" %}
 
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-
-  <title>Guide Rx CHUM</title>
-  <meta name="description" content="Guide Rx CHUM">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  
-  <!-- Bootstrap paper theme -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/yeti/bootstrap.min.css" rel="stylesheet" integrity="sha384-HzUaiJdCTIY/RL2vDPRGdEQHHahjzwoJJzGUkYjHVzTwXFQ2QN/nVgX7tzoMW3Ov" crossorigin="anonymous">
-
-  <!-- Custom CSS stylesheet -->
-  <link rel="stylesheet" href="static/css/custom.css">
-
-  <!-- Bootstrap Select -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">
-
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-
-  <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
-  <![endif]-->
-</head>
-
-<body>
-  <!-- Header -->
-  <header>
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Guide Rx CHUM</a>
-        </div> <!--/navbar-header -->
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Accueil <span class="sr-only">(current)</span></a></li>
-            <li><a href="#">À propos</a></li>
-          </ul>
-        </div> <!--/navbar-collapse -->
-      </div> <!--/nav-bar container -->
-    </nav> <!--/navigation -->
-  </header> <!--/header -->
-
-  <!-- Main content here -->
-  <main>
-    <!-- main Container -->  
-    <div class="container">
-
-      <section id="filters">
-        <div class="input-group col-sm-12 margin-bottom margin-top">
-          <input type="text" class="form-control" placeholder="Chercher pour titre, tags, catégories, etc...">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <i class="glyphicon glyphicon-search"></i>          
-            </button>
-          </span>
-        </div><!-- /input-group -->
-
-        <div class="row">
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <h5 for="category">Les catégories recherchés <span class="btn btn-default btn-xs">Réinitialiser</span></h5>
-              <select class="selectpicker form-control" multiple data-style="btn-primary" data-none-selected-text="Catégories">
-                <option>Cardiologie</option>
-                <option>Pharmacocinétique</option>
-                <option>Oncologie</option>
-              </select>
-            </div> <!-- /.form-group -->            
-          </div> <!-- /.col-md-6 -->
-
-          <div class="col-md-6">
-            <div class="form-group">
-              <h5 for="number-of-data">Nombre de résultats désirés</h5>            
-              <select class="form-control"   data-style="btn-success">
-                <option value="10">10 résultats par page</option>
-                <option value="20">20 résultats par page</option>
-                <option value="50">50 résultats par page</option>
-              </select>
-            </div> <!-- /.form-group -->            
-          </div> <!-- /.col-md-6 -->
-        </div> <!-- /.row -->
-
-      </section> <!-- /#filters -->
-
-
-      <h2 class="text-center margin-bottom">
-          15 résultats trouvés au total
-      </h2>
-      <section id="guides" >
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Guide NACO</h4>
-            Guide informatif comprenant les doses de NACO, les interactions et leur gestion ainsi que leur indication. 
-            <div class="tags">
-              <span class="label label-default">Amiodarone</span>
-              <span class="label label-primary">NACO</span>
-              <span class="label label-success">Interaction</span>
-              <span class="label label-info">Cardio</span>
-              <span class="label label-warning">Apixaban</span>
-              <span class="label label-danger">Anti-Xa</span>              
-            </div>
-          </div>
-        </article>
-
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Dermatology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Thumbnail label</h4>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-          </div>
-        </article>
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Thumbnail label</h4>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-          </div>
-        </article>
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Thumbnail label</h4>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-          </div>
-        </article>
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Thumbnail label</h4>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-          </div>
-        </article>
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Thumbnail label</h4>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-          </div>
-        </article>
-        <article class="media">
-          <div class="media-left media-middle">
-            <a href="#">
-              <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
-            </a>
-          </div>
-          <div class="media-body">
-            <h4 class="media-heading">Thumbnail label</h4>
-            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
-          </div>
-        </article>                        
-      </section> <!-- /#guides -->
-
-      <nav aria-label="Page navigation">
-        <div class="text-center">
-          <ul class="pagination">
-            <li>
-              <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-              </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-              <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav> <!--/ page nav -->
-
-    </div> <!--/main container -->
-
-  </main> <!--/main content -->
-
-
-  <!-- Footer -->
-
-  <hr>
-  <footer>
-    <div class="container">
-      <!-- Footer container -->
-      <p class="text-center">
-          Some footer text here
-      </p>
-    </div> <!--/footer container -->
-  </footer> <!--/footer -->
+{% block title %}
     
+    Accueil - {{ block.super }}
+
+{% endblock title %}
 
 
-  <!-- Jquery -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>  
-  <!-- Bootstrap -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <!-- Bootstrap select -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+{% block content %}
+  <!-- main Container -->  
+  <div class="container">
 
-</body>
-</html>
+    <section id="filters">
+      <div class="input-group col-sm-12 margin-bottom margin-top">
+        <input type="text" class="form-control" placeholder="Chercher pour titre, tags, catégories, etc...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <i class="glyphicon glyphicon-search"></i>          
+          </button>
+        </span>
+      </div><!-- /input-group -->
+
+      <div class="row">
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <h5 for="category">Les catégories recherchés 
+            <!--<span class="btn btn-default btn-xs">Réinitialiser</span>-->
+            </h5> 
+            <select class="selectpicker form-control" multiple data-style="btn-primary" data-none-selected-text="Catégories">
+              <option>Cardiologie</option>
+              <option>Pharmacocinétique</option>
+              <option>Oncologie</option>
+            </select>
+          </div> <!-- /.form-group -->            
+        </div> <!-- /.col-md-6 -->
+
+        <div class="col-md-6">
+          <div class="form-group">
+            <h5 for="number-of-data">Nombre de résultats désirés</h5>            
+            <select class="form-control"   data-style="btn-success">
+              <option value="10">10 résultats par page</option>
+              <option value="20">20 résultats par page</option>
+              <option value="50">50 résultats par page</option>
+            </select>
+          </div> <!-- /.form-group -->            
+        </div> <!-- /.col-md-6 -->
+      </div> <!-- /.row -->
+
+    </section> <!-- /#filters -->
+
+
+    <h2 class="text-center margin-bottom">
+        15 résultats trouvés au total
+    </h2>
+    <section id="guides" >
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Guide NACO</h4>
+          Guide informatif comprenant les doses de NACO, les interactions et leur gestion ainsi que leur indication. 
+          <div class="tags">
+            <span class="label label-default">Amiodarone</span>
+            <span class="label label-primary">NACO</span>
+            <span class="label label-success">Interaction</span>
+            <span class="label label-info">Cardio</span>
+            <span class="label label-warning">Apixaban</span>
+            <span class="label label-danger">Anti-Xa</span>              
+          </div>
+        </div>
+      </article>
+
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Dermatology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Thumbnail label</h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+        </div>
+      </article>
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Thumbnail label</h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+        </div>
+      </article>
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Thumbnail label</h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+        </div>
+      </article>
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Thumbnail label</h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+        </div>
+      </article>
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Thumbnail label</h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+        </div>
+      </article>
+      <article class="media">
+        <div class="media-left media-middle">
+          <a href="#">
+            <img class="media-object" src="static/img/icons/Cardiology.svg" alt="">
+          </a>
+        </div>
+        <div class="media-body">
+          <h4 class="media-heading">Thumbnail label</h4>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. 
+        </div>
+      </article>                        
+    </section> <!-- /#guides -->
+
+    <nav aria-label="Page navigation">
+      <div class="text-center">
+        <ul class="pagination">
+          <li>
+            <a href="#" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li><a href="#">1</a></li>
+          <li><a href="#">2</a></li>
+          <li><a href="#">3</a></li>
+          <li><a href="#">4</a></li>
+          <li><a href="#">5</a></li>
+          <li>
+            <a href="#" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav> <!--/ page nav -->
+
+  </div> <!--/main container -->
+
+  
+{% endblock content %}

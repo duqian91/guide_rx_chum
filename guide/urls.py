@@ -13,13 +13,12 @@ urlpatterns = [
         name='index',
         ),
 
-    url(r'^$',
+    url(r'^a-propos/$',
         TemplateView.as_view(template_name="pages/about.html"),
         name='about',
         ),
     
     # API urls
-    url(r'^api/guide/$', API_views.GuideAPIList.as_view()),
-    
+    url(r'^api/guide/$', API_views.GuideAPIList.as_view()), 
     
 ]
