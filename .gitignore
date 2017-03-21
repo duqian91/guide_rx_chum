@@ -70,3 +70,8 @@ node_modules/
 # bower packages
 guide_rx_chum/assets-src/vendor/
 .sass-cache/
+
+# filer files
+filer_public/
+filer_public_thumbnails/
+
