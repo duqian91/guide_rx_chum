@@ -13,9 +13,9 @@
 
     <section id="filters">
       <div class="input-group col-sm-12 margin-bottom margin-top">
-        <input type="text" class="form-control" placeholder="Chercher pour titre, tags, catégories, etc...">
+        <input type="text" id="search" class="form-control" placeholder="Chercher pour titre, tags, catégories, etc...">
         <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
+          <button id="search-button" class="btn btn-default" type="button">
             <i class="glyphicon glyphicon-search"></i>          
           </button>
         </span>
@@ -28,7 +28,7 @@
             <h5 for="category">Les catégories recherchés 
             <!--<span class="btn btn-default btn-xs">Réinitialiser</span>-->
             </h5> 
-            <select class="selectpicker form-control" multiple data-style="btn-primary" data-none-selected-text="Catégories">
+            <select id="category" class="selectpicker form-control" multiple data-style="btn-primary" data-none-selected-text="Catégories">
               {% for category in category_list %}
               <option>{{ category.category_name }}</option>                
               {% endfor %}
@@ -39,7 +39,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <h5 for="number-of-data">Nombre de résultats désirés</h5>            
-            <select class="form-control"   data-style="btn-success">
+            <select id="result-num-displayed" class="form-control"   data-style="btn-success">
               <option value="10">10 résultats par page</option>
               <option value="20">20 résultats par page</option>
               <option value="50">50 résultats par page</option>
@@ -52,7 +52,7 @@
 
 
     <h2 class="text-center margin-bottom">
-        15 résultats trouvés au total
+        <span id="total-result-num">15</span> résultats trouvés au total
     </h2>
     <section id="guides" >
     {% for guide in guide_list %}
@@ -76,7 +76,7 @@
     {% endfor %}
     </section> <!-- /#guides -->
 
-    <nav aria-label="Page navigation">
+    <nav id="navigation" aria-label="Page navigation">
       <div class="text-center">
         <ul class="pagination">
           <li>
