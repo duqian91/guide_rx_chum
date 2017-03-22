@@ -27,7 +27,7 @@ class GuideAPIList(generics.ListAPIView):
 
     filter_backends = (
         filters.DjangoFilterBackend,
-        filters.OrderingFilter,
+        # filters.OrderingFilter,
         filters.SearchFilter,
     )
 

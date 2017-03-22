@@ -14,23 +14,33 @@ class MyPrimaryKeyRelatedField(serializers.PrimaryKeyRelatedField):
         return False
 
 
+class CategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        editable = False
+        fields = (
+            'category_name',
+        )
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ('tag', 'color_class')
+
+
 class GuideSerializer(serializers.ModelSerializer):
 
     category = MyPrimaryKeyRelatedField(queryset=Category.objects.all())
-    tag = MyPrimaryKeyRelatedField(queryset=Tag.objects.all(), many=True)
-
+    tag = TagSerializer(many=True)
     document_url = serializers.SerializerMethodField()
     category_img_url = serializers.SerializerMethodField()
-    tag_color= serializers.SerializerMethodField()
 
     def get_category_img_url(self, obj):
         return obj.category.category_img.url
 
     def get_document_url(self, obj):
         return obj.document.url
-
-    def get_tag_color(self, obj):
-        return obj.tag.color_class
 
     class Meta:
         model = Guide
@@ -42,15 +52,5 @@ class GuideSerializer(serializers.ModelSerializer):
             'category',
             'category_img_url',
             'tag',
-            'tag_color',
             'author',
         )
-
-class CategorySerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Category
-        editable = False
-        fields = (
-            'category_name',
-        )
-
