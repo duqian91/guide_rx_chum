@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}
     
@@ -28,7 +29,8 @@
             <h5 for="category">Les catégories recherchés 
             <!--<span class="btn btn-default btn-xs">Réinitialiser</span>-->
             </h5> 
-            <select id="category" class="selectpicker form-control" multiple data-style="btn-primary" data-none-selected-text="Catégories">
+            <select id="category" class="selectpicker form-control" data-style="btn-primary" >
+              <option value="">Tous les catégories</option>
               {% for category in category_list %}
               <option>{{ category.category_name }}</option>                
               {% endfor %}
@@ -102,3 +104,9 @@
 
   
 {% endblock content %}
+
+{% block javascript %}
+
+<script src="{% static 'js/index-ajax.js' %}"></script>
+
+{% endblock javascript %}
