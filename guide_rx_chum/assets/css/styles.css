@@ -1,0 +1,23 @@
+/*! project specific CSS goes here. */
+
+/* fix nav bar blocking content */
+body { 
+    padding-top: 65px; 
+    font-family: 'Roboto', sans-serif;
+}
+
+.margin-bottom {
+    margin-bottom: 15px;
+}
+
+.margin-top {
+    margin-top: 15px;
+}
+
+#filters .bootstrap-select>.dropdown-toggle.bs-placeholder {
+    color: #fff !important;
+}
+
+#guides article {
+    margin-bottom: 30px !important;
+}
