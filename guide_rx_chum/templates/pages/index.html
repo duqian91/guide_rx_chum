@@ -41,7 +41,7 @@
         <div class="col-md-6">
           <div class="form-group">
             <h5 for="number-of-data">Nombre de résultats désirés</h5>            
-            <select id="result-num-displayed" class="form-control"   data-style="btn-success">
+            <select id="result-num-displayed" class="form-control" data-style="btn-success">
               <option value="10">10 résultats par page</option>
               <option value="20">20 résultats par page</option>
               <option value="50">50 résultats par page</option>
@@ -54,7 +54,7 @@
 
 
     <h2 class="text-center margin-bottom">
-        <span id="total-result-num">15</span> résultats trouvés au total
+        <span id="total-result-num">0</span> résultats trouvés au total
     </h2>
     <section id="guides" >
     {% for guide in guide_list %}
@@ -82,21 +82,24 @@
       <div class="text-center">
         <ul class="pagination">
           <li>
-            <a href="#" aria-label="Previous">
+            <a href="#" id="previous" aria-label="Previous">
               <span aria-hidden="true">&laquo;</span>
             </a>
-          </li>
-          <li><a href="#">1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">4</a></li>
-          <li><a href="#">5</a></li>
+        </ul>
+        <ul class="pagination" id="pagination">
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ul>
+        <ul class="pagination">
           <li>
-            <a href="#" aria-label="Next">
+            <a href="#" id="next" aria-label="Next">
               <span aria-hidden="true">&raquo;</span>
             </a>
           </li>
-        </ul>
+        </ul>        
       </div>
     </nav> <!--/ page nav -->
 
