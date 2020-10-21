@@ -10,7 +10,7 @@ sys.path.insert(0, root('apps'))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=!@d@&_m@oh_!-n+zqd^#(h$6uq*9^lgv+jeqpl%thx65a_#4l'
+SECRET_KEY = '=xxxx'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
